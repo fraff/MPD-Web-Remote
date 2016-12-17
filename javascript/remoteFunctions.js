@@ -237,6 +237,7 @@ var volumeUp = function()
 	var xmlhttp = new XMLHttpRequest();
 	xmlhttp.open("GET", mpdControlFile + "?action=VolumeUp", false);
 	xmlhttp.send();
+	updatePage();
 }
 
 var volumeDown = function()
@@ -244,4 +245,5 @@ var volumeDown = function()
 	var xmlhttp = new XMLHttpRequest();
 	xmlhttp.open("GET", mpdControlFile + "?action=VolumeDown", false);
 	xmlhttp.send();
+	updatePage();
 }
