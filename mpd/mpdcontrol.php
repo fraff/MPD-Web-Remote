@@ -33,6 +33,7 @@ switch ($action)
   case "Play":           $mpd->Play();               break;
   case "Pause":          $mpd->Pause();              break;
   case "Next":           $mpd->Next();               break;
+  case "Stop":           $mpd->Stop();               break;
   case "Previous":       $mpd->Previous();           break;
   case "SkipTo":         $mpd->SkipTo($track);       break;
   case "RandomOn":       $mpd->SetRandom(1);         break;
@@ -61,6 +62,7 @@ echo $mpd->state."\n";
 echo $mpd->random."\n";
 echo $mpd->repeat."\n";
 echo $mpd->playlist_count."\n";
+echo $mpd->volume . "\n";
 
 if ($mpd->state != "stop")
 {
@@ -68,6 +70,7 @@ if ($mpd->state != "stop")
   echo $mpd->playlist[$mpd->current_track_id]['Artist']."\n";
   echo $mpd->playlist[$mpd->current_track_id]['Album'];
 }
+
 
 $mpd->Disconnect();
 

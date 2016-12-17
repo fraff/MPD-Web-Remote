@@ -13,6 +13,7 @@ var addEventListeners = function()
 	var repeatCheckbox = document.getElementById("repeatCheckbox");
 	var previousButton = document.getElementById("previousButton");
 	var playPauseButton = document.getElementById("playPauseButton");
+	var stopButton = document.getElementById("stopButton");
 	var nextButton = document.getElementById("nextButton");
 	var volUpButton = document.getElementById("volumeUp");
 	var volDownButton = document.getElementById("volumeDown");
@@ -20,7 +21,7 @@ var addEventListeners = function()
 	lastUpdated.addEventListener("click", updatePage, false);
 	shuffleCheckbox.addEventListener("click", toggleRandom, false);
 	previousButton.addEventListener("click", previous, false);
-	playPauseButton.addEventListener("click", playPause, false);
+	stopButton.addEventListener("click", stop, false);
 	nextButton.addEventListener("click", next, false);
 	volUpButton.addEventListener("click", volumeUp, false);
 	volDownButton.addEventListener("click", volumeDown, false);
@@ -60,9 +61,10 @@ var updatePage = function()
 	var randomStatus = serverResponseLine[1];
 	var repeatStatus = serverResponseLine[2];
 	var playqueueCount = serverResponseLine[3];
-	var track = serverResponseLine[4];
-	var artist = serverResponseLine[5];
-	var album = serverResponseLine[6];
+	var volume = serverResponseLine[4];
+	var track = serverResponseLine[5];
+	var artist = serverResponseLine[6];
+	var album = serverResponseLine[7];
 			
 	if (status == "stop")
 	{
@@ -89,6 +91,8 @@ var updatePage = function()
 			playPauseButtonState = "Play";
 		break;
 	}
+    
+	statusText = statusText + " (volume " + volume+ ")";
 	
 	// Update elements
 	document.getElementById("Status").innerHTML = statusText;
@@ -137,6 +141,13 @@ var pauseMPD = function()
 	xmlhttp.send();
 }
 
+var stopMPD = function()
+{
+	var xmlhttp = new XMLHttpRequest();
+	xmlhttp.open("GET", mpdControlFile + "?action=Stop", false);
+	xmlhttp.send();
+}
+
 var nextMPD = function()
 {
 	var xmlhttp = new XMLHttpRequest();
@@ -168,6 +179,12 @@ var playPause = function()
 var next = function()
 {
 	nextMPD();
+	updatePage();
+}
+
+var stop = function()
+{
+	stopMPD();
 	updatePage();
 }
 
