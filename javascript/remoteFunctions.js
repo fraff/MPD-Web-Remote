@@ -22,6 +22,7 @@ var addEventListeners = function()
 	shuffleCheckbox.addEventListener("click", toggleRandom, false);
 	previousButton.addEventListener("click", previous, false);
 	stopButton.addEventListener("click", stop, false);
+	playPauseButton.addEventListener("click", playPause, false);
 	nextButton.addEventListener("click", next, false);
 	volUpButton.addEventListener("click", volumeUp, false);
 	volDownButton.addEventListener("click", volumeDown, false);
