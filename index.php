@@ -55,21 +55,18 @@
 		
 			<ul class="pageitem">
 				<li class="textbox">
-					<span class="header">
-						<div id="Status"></div>
-					</span>
-					<p>
-						<div id="Track"></div>
-						<div id="Artist"></div>
-						<div id="Album"></div>
-					</p>
-					<p id="lastUpdated"></p>
+					<a href="playqueue.html" style="text-decoration: none; color: #000000">
+						<span class="header">
+							<div id="Status"></div>
+						</span>
+						<p>
+							<div id="Track"></div>
+							<div id="Artist"></div>
+							<div id="Album"></div>
+						</p>
+						<p id="lastUpdated"></p>
+					</a>
 				</li>
-			</ul>
-			
-			<ul class="pageitem">
-				<li class="checkbox"><span class="name">Random</span><input id="shuffleCheckbox" type="checkbox" /></li>
-				<li class="checkbox"><span class="name">Repeat</span><input id="repeatCheckbox" type="checkbox" /></li>
 			</ul>
 			
 			<ul class="pageitem">
@@ -81,6 +78,11 @@
 				</li>
 			</ul>
 
+			<ul class="pageitem">
+				<li class="checkbox"><span class="name">Random</span><input id="shuffleCheckbox" type="checkbox" /></li>
+				<li class="checkbox"><span class="name">Repeat</span><input id="repeatCheckbox" type="checkbox" /></li>
+			</ul>
+			
 			<ul class="pageitem">
 				<li class="menu">
 					<a href="playqueue.html">
