@@ -235,12 +235,18 @@ var toggleRepeat = function()
 	updatePage();
 }
 
+function sleep (time) {
+  return new Promise((resolve) => setTimeout(resolve, time*1000));
+}
+
+
 var volumeActu = function()
 {
 	var xmlhttp = new XMLHttpRequest();
-	xmlhttp.open("GET", mpdControlFile + "?action=VolumeActu", true);
-	xmlhttp.send();
-	updatePage();
+	volumeUp();
+	sleep(4).then(() => {
+		volumeDown();
+	});
 }
 
 var volumeUp = function()
