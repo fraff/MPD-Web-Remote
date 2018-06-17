@@ -70,6 +70,17 @@
 			</ul>
 			
 			<ul class="pageitem">
+				<li class="checkbox"><span class="name">Random</span><input id="shuffleCheckbox" type="checkbox" /></li>
+				<li class="checkbox"><span class="name">Repeat</span><input id="repeatCheckbox" type="checkbox" /></li>
+			</ul>
+			
+			<ul class="pageitem">
+				<li class="menu" id="volumeActu">
+					<span class="name">Volume Actu</span>	
+				</li>
+			</ul>
+
+			<ul class="pageitem">
 				<li class="menu" id="volumeUp">
 					<span class="name">Volume Up</span>	
 				</li>
@@ -78,11 +89,6 @@
 				</li>
 			</ul>
 
-			<ul class="pageitem">
-				<li class="checkbox"><span class="name">Random</span><input id="shuffleCheckbox" type="checkbox" /></li>
-				<li class="checkbox"><span class="name">Repeat</span><input id="repeatCheckbox" type="checkbox" /></li>
-			</ul>
-			
 			<ul class="pageitem">
 				<li class="menu">
 					<a href="playqueue.html">

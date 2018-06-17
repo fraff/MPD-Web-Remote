@@ -40,6 +40,11 @@ switch ($action)
   case "RandomOff":      $mpd->SetRandom(0);         break;
   case "RepeatOn":       $mpd->SetRepeat(1);         break;
   case "RepeatOff":      $mpd->SetRepeat(0);         break;
+  case "VolumeActu":     $mpd->AdjustVolume(+20);
+						 syslog (LOG_INFO, "VolumeActu start");
+						 sleep(180);
+						 syslog (LOG_INFO, "VolumeActu stop");
+						 $mpd->AdjustVolume(-20);    break;
   case "VolumeUp":       $mpd->AdjustVolume(5);      break;
   case "VolumeDown":     $mpd->AdjustVolume(-5);     break;
   case "AddToPlayQueue": $mpd->PLAdd($track);        break;

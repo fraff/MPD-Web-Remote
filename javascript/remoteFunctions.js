@@ -15,6 +15,7 @@ var addEventListeners = function()
 	var playPauseButton = document.getElementById("playPauseButton");
 	var stopButton = document.getElementById("stopButton");
 	var nextButton = document.getElementById("nextButton");
+	var volActuButton = document.getElementById("volumeActu");
 	var volUpButton = document.getElementById("volumeUp");
 	var volDownButton = document.getElementById("volumeDown");
 
@@ -24,6 +25,7 @@ var addEventListeners = function()
 	stopButton.addEventListener("click", stop, false);
 	playPauseButton.addEventListener("click", playPause, false);
 	nextButton.addEventListener("click", next, false);
+	volActuButton.addEventListener("click", volumeActu, false);
 	volUpButton.addEventListener("click", volumeUp, false);
 	volDownButton.addEventListener("click", volumeDown, false);
 	repeatCheckbox.addEventListener("click", toggleRepeat, false);
@@ -230,6 +232,14 @@ var toggleRepeat = function()
 		xmlhttp.open("GET", mpdControlFile + "?action=RepeatOff", false);
 		xmlhttp.send();
 	}
+	updatePage();
+}
+
+var volumeActu = function()
+{
+	var xmlhttp = new XMLHttpRequest();
+	xmlhttp.open("GET", mpdControlFile + "?action=VolumeActu", true);
+	xmlhttp.send();
 	updatePage();
 }
 
