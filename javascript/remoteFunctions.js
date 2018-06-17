@@ -244,7 +244,7 @@ var volumeActu = function()
 {
 	var xmlhttp = new XMLHttpRequest();
 	volumeUp();
-	sleep(4).then(() => {
+	sleep(180).then(() => {
 		volumeDown();
 	});
 }
